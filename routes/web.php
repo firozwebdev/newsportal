@@ -21,16 +21,14 @@ Route::get('/site-login', function () {
     return view('backend.login');
 });
 
-Route::get('/add-category','Admin\CategoryController@index')->name('add-category');
+Route::get('/add-category','Admin\CategoryController@create')->name('create.category');
+Route::get('/all-category','Admin\CategoryController@index')->name('index.category');
+Route::post('/save-category','Admin\CategoryController@save')->name('save.category');
 
-Route::post('/save-category', function (Request $request, Category $category) {
+// Route::post('/save-category', function (Request $request, Category $category) {
     
-    $category->create([
-        'category_name'=>$request->category_name,
-        'category_description'=>$request->category_description,
-    ]);
-    return redirect()->back()->with('message','Category Saved Successfully !');
-})->name('save-category');
+   
+// })->name('save-category');
 
 Route::get('/manage-category', function () {
     return view('backend.category.manage_category');

@@ -10,7 +10,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               
-              <form  id="quickForm" method="post" action="{{route('save-category')}}">
+              <form  id="quickForm" method="post" action="{{route('save.category')}}">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
