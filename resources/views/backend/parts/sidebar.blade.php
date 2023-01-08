@@ -87,13 +87,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('add-post')}}" class="nav-link">
+                <a href="{{route('create.post')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('manage-post')}}" class="nav-link">
+                <a href="{{route('save.post')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage</p>
                 </a>
@@ -111,7 +111,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('add-post')}}" class="nav-link">
+                <a href="{{route('create.post')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add </p>
                 </a>
@@ -135,7 +135,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('add-post')}}" class="nav-link">
+                <a href="{{route('create.post')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add </p>
                 </a>
@@ -160,7 +160,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('add-post')}}" class="nav-link">
+                <a href="{{route('create.post')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add </p>
                 </a>
