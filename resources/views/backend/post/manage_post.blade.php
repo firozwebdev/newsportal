@@ -14,7 +14,7 @@
                         <th>Id.</th>
                         <th>Post Title</th>
                         <th>Category Name</th>
-                        <th style="width: 50%;">Post Description</th>
+                        <th style="width: 30%;">Post Description</th>
                         <th>Post Image</th>
                         <th>Post Status</th>
                         <th>Action</th>

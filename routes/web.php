@@ -15,36 +15,53 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('backend.master');
+    $posts = App\Models\Admin\Post::latest()->paginate(10);
+    
+    return view('frontend.pages.front')->with('posts',$posts);
 });
 Route::get('/site-login', function () {
     return view('backend.login');
 });
 
-Route::get('/add-category','Admin\CategoryController@create')->name('create.category');
-Route::get('/all-category','Admin\CategoryController@index')->name('index.category');
-Route::post('/save-category','Admin\CategoryController@save')->name('save.category');
+
+Route::group(['prefix'=>'admin'],function (){
+    Route::get('/dashboard', function () {
+        return view('backend.master');
+    });
+    Route::group(['namespace'=>'Admin'], function(){
+        Route::get('/add-category','CategoryController@create')->name('create.category');
+        Route::get('/all-category','CategoryController@index')->name('index.category');
+        Route::post('/save-category','CategoryController@save')->name('save.category');
+
+        Route::get('/add-post','PostController@create')->name('create.post');
+        Route::post('/save-post','PostController@save')->name('save.post');
+        Route::get('/all-post','PostController@index')->name('index.post');
+
+
+        // Datatable ajax request
+        Route::get('/category-datable','CategoryController@fetch')->name('category.datatable');
+        Route::get('/post-datable','PostController@fetch')->name('post.datatable');
+    });
+
+
+    Route::get('/manage-category', function () {
+        return view('backend.category.manage_category');
+    })->name('manage-category');
+    
+
+    
+    Route::get('/all-posts', function () {
+    
+    
+        return view('backend.post.manage_post');
+    })->name('manage-post');
+    
+
+});
+
 
 // Route::post('/save-category', function (Request $request, Category $category) {
     
    
 // })->name('save-category');
 
-Route::get('/manage-category', function () {
-    return view('backend.category.manage_category');
-})->name('manage-category');
-
-Route::get('/add-post','Admin\PostController@create')->name('create.post');
-
-Route::post('/save-post','Admin\PostController@save')->name('save.post');
-Route::get('/all-post','Admin\PostController@index')->name('index.post');
-
-Route::get('/all-posts', function () {
-
-
-    return view('backend.post.manage_post');
-})->name('manage-post');
-
-// Datatable ajax request
-Route::get('/category-datable','Admin\CategoryController@fetch')->name('category.datatable');
-Route::get('/post-datable','Admin\PostController@fetch')->name('post.datatable');
