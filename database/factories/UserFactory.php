@@ -17,6 +17,12 @@ use Illuminate\Support\Str;
 |
 */
 
+/* Factory command with tinker 
+
+factory(App\User::class, 200)->create();
+
+*/
+
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
@@ -26,3 +32,22 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+// $factory->define(App\Models\Admin\Category::class, function (Faker $faker) {
+//     return [
+//         'category_name' => $faker->randomElement(['Sports','Politics','Game','History','Geography','Astronomy']),
+//         'category_description' => $faker->text,
+        
+//     ];
+// });
+
+// $factory->define(App\Models\Admin\Post::class, function (Faker $faker) {
+//     return [
+//         'post_title' => $faker->name,
+//         'category_name' => App\Models\Admin\Category::all()->random()->category_name,
+//         'post_image' => $faker->randomElement(['1.jpg','2.jpg','3.jpg']),
+//         'post_description' => $faker->text,
+//         'post_status' => $faker->randomElement(['Active','Pending','Inactive']),
+        
+//     ];
+// });

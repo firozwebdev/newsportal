@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Models\Admin\Category;
+use App\Models\Admin\Post;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+         //$this->call(UserSeeder::class);
+         //Category::factory()->count(5)->create();
+         //Post::factory()->count(5)->create();
+         //factory(App\Models\Admin\Category::class)->create();
     }
 }

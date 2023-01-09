@@ -27,7 +27,7 @@ class PostController extends Controller
         
         if ($request->has('post_image')) {
             $imageName = time().'.'.$request->post_image->extension();  
-            $request->post_image->move(public_path('images'), $imageName);
+            $request->post_image->move(public_path('posts/images'), $imageName);
         }
         Post::create([
             'post_title' => $request->post_title,

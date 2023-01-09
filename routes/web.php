@@ -44,3 +44,5 @@ Route::get('/all-post', function () {
     return view('backend.post.manage_post');
 })->name('manage-post');
 
+// Datatable ajax request
+Route::get('/category-datable','Admin\CategoryController@fetch')->name('category.datatable');
