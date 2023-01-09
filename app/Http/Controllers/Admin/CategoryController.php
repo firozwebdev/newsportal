@@ -33,7 +33,7 @@ class CategoryController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
    
-                           $btn = '<a href="javascript:void(0)" class="edit btn btn-warning btn-sm">Edit</a> | <a href="javascript:void(0)" class="edit btn btn-danger btn-sm">Delete</a> ';
+                           $btn = '<button type="button" class="btn btn-info btn-flat"><i class="fas fa-align-left"></i></button> | <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-align-right"></i></button> ' ;
      
                             return $btn;
                     })
