@@ -93,7 +93,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('save.post')}}" class="nav-link">
+                <a href="{{route('index.post')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage</p>
                 </a>

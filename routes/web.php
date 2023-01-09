@@ -37,8 +37,9 @@ Route::get('/manage-category', function () {
 Route::get('/add-post','Admin\PostController@create')->name('create.post');
 
 Route::post('/save-post','Admin\PostController@save')->name('save.post');
+Route::get('/all-post','Admin\PostController@index')->name('index.post');
 
-Route::get('/all-post', function () {
+Route::get('/all-posts', function () {
 
 
     return view('backend.post.manage_post');
@@ -46,3 +47,4 @@ Route::get('/all-post', function () {
 
 // Datatable ajax request
 Route::get('/category-datable','Admin\CategoryController@fetch')->name('category.datatable');
+Route::get('/post-datable','Admin\PostController@fetch')->name('post.datatable');
